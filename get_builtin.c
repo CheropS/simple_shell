@@ -8,7 +8,7 @@
 
 int (*get_builtin(char *cmd))(data_shell *)
 {
-	builtin_h builtin[] = {
+	builtin_t builtin[] = {
 		{ "env", _env },
 		{ "exit", exit_shell },
 		{ "setenv", _setenv },
@@ -21,7 +21,7 @@ int (*get_builtin(char *cmd))(data_shell *)
 
 	for (a = 0; builtin[a].name; a++)
 	{
-		if (strcmp(builtin[a].name, cmd) == 0)
+		if (_strcmp(builtin[a].name, cmd) == 0)
 			break;
 	}
 
